@@ -1,4 +1,6 @@
 
+import os
+
 from django.utils.translation import gettext_lazy as _
 
 
@@ -19,6 +21,10 @@ class BlockStaticAssetsRegistrationMixin():
         def __init__(self, path, **kwargs) -> None:
             self.kwargs = kwargs
             self.path = path
+
+        @property
+        def file_extension(self):
+            return os.path.splitext(self.path)[1]
 
         @property
         def render_kwargs(self):
