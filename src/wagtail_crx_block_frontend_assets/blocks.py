@@ -1,0 +1,28 @@
+
+from django.utils.translation import gettext_lazy as _
+
+
+class BlockStaticAssetsRegistrationMixin():
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Register the block's assets
+        self.static_files = []
+        # self.register_assets()
+
+    def register_assets(self):
+        """
+        This method can be overridden in child blocks to specify which assets are needed.
+        """
+        pass
+
+    class StaticAsset:
+        def __init__(self, path, **kwargs) -> None:
+            self.kwargs = kwargs
+            self.path = path
+
+        @property
+        def render_kwargs(self):
+            kwargs_string = ""
+            for key, value in self.kwargs.items():
+                kwargs_string += '{}={}'.format(key, value)
+            return kwargs_string
