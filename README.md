@@ -61,7 +61,7 @@ Define and organize frontend assets (like js or css files) for your Wagtail CRX 
     ```
     $ python -m venv .venv
     ```
-2. Install this app in edditable mode
+2. Install this app in editable mode
     ```
     $ pip install -e .
     ```
