@@ -18,10 +18,13 @@ def get_blocks_static_assets(body):
 
     for block in body:
         if isinstance(block.block, BlockStaticAssetsRegistrationMixin): #hasattr(block.block, 'static_files'):
-            block.block.register_assets(block.value)
-            static_files.extend(block.block.static_files)
+            static_files.extend(
+                block.block.register_assets(block.value)
+            )
         elif block.value["content"] and issubclass(block.block.__class__, BaseLayoutBlock) and isinstance(block.value["content"], StreamValue):
-            static_files.extend(get_blocks_static_assets(block.value["content"]))
+            static_files.extend(
+                get_blocks_static_assets(block.value["content"])
+            )
 
     return static_files
 
