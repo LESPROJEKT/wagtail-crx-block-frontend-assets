@@ -1,0 +1,11 @@
+{% extends "coderedcms/pages/base.html" %}
+
+{% block custom_assets %}
+{{ block.super }}
+{% include "wagtail_crx_block_frontend_assets/includes/block_assets.html" with required_file_extension=".css" %}
+{% endblock custom_assets %}
+
+{% block custom_scripts %}
+{{ block.super }}
+{% include "wagtail_crx_block_frontend_assets/includes/block_assets.html" with required_file_extension=".js" %}
+{% endblock custom_scripts %}

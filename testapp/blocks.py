@@ -14,7 +14,9 @@ class FrontendAssetsBlock(BlockStaticAssetsRegistrationMixin, StructBlock):
         static_assets = []
 
         static_assets += [
-            self.StaticAsset("path/to/asset.js")
+            self.StaticAsset("path/to/asset.js", target="_blank"),
+            self.StaticAsset("path/to/style.css", media="print"),
+
         ]
 
         return static_assets
