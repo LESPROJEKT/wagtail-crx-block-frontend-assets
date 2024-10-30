@@ -28,6 +28,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     # This project
     "testapp",
+    "wagtail_crx_block_frontend_assets",
     # Wagtail CRX (CodeRed Extensions)
     "coderedcms",
     "django_bootstrap5",
