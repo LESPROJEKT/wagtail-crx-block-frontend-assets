@@ -24,7 +24,7 @@ class BlockStaticAssetsRegistrationMixin():
         def render_kwargs(self):
             kwargs_string = ""
             for key, value in self.kwargs.items():
-                kwargs_string += '{}={}'.format(key, value)
+                kwargs_string += '{}={} '.format(key, value)
             return kwargs_string
 
     def register_assets(self, block_value) -> list[StaticAsset]:
