@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wagtail_crx_block_frontend_assets"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Daniel Kunický", email="danecek37@gmail.com" },
 ]
