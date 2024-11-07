@@ -21,7 +21,7 @@ def get_blocks_static_assets(body):
             static_files.extend(
                 block.block.register_assets(block.value)
             )
-        elif block.value["content"] and issubclass(block.block.__class__, BaseLayoutBlock) and isinstance(block.value["content"], StreamValue):
+        elif issubclass(block.block.__class__, BaseLayoutBlock) and block.value["content"] and isinstance(block.value["content"], StreamValue):
             static_files.extend(
                 get_blocks_static_assets(block.value["content"])
             )
