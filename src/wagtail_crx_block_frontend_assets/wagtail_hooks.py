@@ -1,6 +1,6 @@
 from coderedcms.blocks.layout_blocks import BaseLayoutBlock
+from wagtail import hooks
 from wagtail.blocks.stream_block import StreamValue
-from wagtail.core import hooks
 
 from wagtail_crx_block_frontend_assets.blocks import BlockStaticAssetsRegistrationMixin
 
