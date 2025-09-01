@@ -17,7 +17,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-  "coderedcms==2.1.*"
+  "coderedcms>=2.1,<4"
 ]
 
 [project.urls]
