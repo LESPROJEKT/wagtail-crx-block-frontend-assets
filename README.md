@@ -43,15 +43,16 @@ Define and organize frontend assets (like js or css files) for your Wagtail CRX 
 3. Then you can define place in your templates where you want your block assets to be rendered like this:
     ```
     {% extends "coderedcms/pages/base.html" %}
+    {% load block_assets_tags %}
 
     {% block custom_assets %}
     {{ block.super }}
-    {% include "wagtail_crx_block_frontend_assets/includes/block_assets.html" with required_file_extension=".css" %}
+    {% render_block_assets required_file_extension=".css" %}
     {% endblock custom_assets %}
 
     {% block custom_scripts %}
     {{ block.super }}
-    {% include "wagtail_crx_block_frontend_assets/includes/block_assets.html" with required_file_extension=".js" %}
+    {% render_block_assets required_file_extension=".js" %}
     {% endblock custom_scripts %}
     ```
 
