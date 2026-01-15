@@ -1,6 +1,16 @@
 # Wagtail CRX block frontend assets rendering
 
+[![PyPI version](https://img.shields.io/pypi/v/wagtail-crx-block-frontend-assets.svg)](https://pypi.org/project/wagtail-crx-block-frontend-assets/) [![Python versions](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-blue)](https://pypi.org/project/wagtail-crx-block-frontend-assets/) [![Django tested](https://img.shields.io/badge/django-3.2%20%7C%204.2%20%7C%205.0-blue)](https://www.djangoproject.com/) [![Wagtail tested](https://img.shields.io/badge/wagtail-4.2%20LTS%20%7C%205.2%20LTS%20%7C%206.3%20LTS-blue)](https://wagtail.org/) [![CodeRed CMS tested](https://img.shields.io/badge/coderedcms-2.x%20%7C%203.x%20%7C%204.x%20%7C%205.x-blue)](https://pypi.org/project/coderedcms/) [![License](https://img.shields.io/pypi/l/wagtail-crx-block-frontend-assets.svg)](https://pypi.org/project/wagtail-crx-block-frontend-assets/)
+
 Define and organize frontend assets (like js or css files) for your Wagtail CRX blocks.
+
+## Supported versions
+
+- See the badges above for tested versions.
+- "Locked" and "floating" dependency sets are tested.
+- Locked sets pin Django + Wagtail + CodeRed via `constraints/*.txt`.
+- Floating sets pin Wagtail + CodeRed only, letting Django float within their ranges.
+- To support a new version, add a constraint file in `constraints/` and a matching tox/CI entry.
 
 ## Getting started
 
@@ -66,11 +76,20 @@ Define and organize frontend assets (like js or css files) for your Wagtail CRX 
     ```
     $ pip install -e .
     ```
-3. Migrate testapp DB
+3. Run tests (single environment)
+    ```
+    $ pip install -e .[test]
+    $ pytest
+    ```
+4. Run the compatibility matrix
+    ```
+    $ tox
+    ```
+5. Migrate testapp DB
     ```
     $ python manage.py migrate
     ```
-3. Run the testapp
+6. Run the testapp
     ```
     $ python manage.py runserver
     ```
