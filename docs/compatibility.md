@@ -86,3 +86,26 @@ If badges are present, avoid duplicating the same list in text.
 5. Add CI matrix entries.
 6. Update README badges or notes.
 7. Run `tox`.
+
+## 10) Current tested environments
+
+Keep existing cells when adding a new stack. Do not drop old tox/CI environments
+to make a new version green.
+
+Declared ranges:
+
+- `wagtail>=4.2,<8`
+- `coderedcms>=2.1,<7`
+- Python 3.9 remains for older cells. CodeRed CMS 6 / Wagtail 7 cells use Python 3.10+.
+
+Locked + floating tox/CI cells:
+
+- `py39-wagtail42-crx2`
+- `py310-wagtail52-crx3`
+- `py311-wagtail63-crx4`
+- `py311-wagtail63-crx5`
+- `py312-wagtail70-crx6`
+
+Guard optional apps removed in newer Wagtail/CRX (for example
+`wagtail.contrib.modeladmin`, gone in Wagtail 6+) in test settings so older
+cells still boot.

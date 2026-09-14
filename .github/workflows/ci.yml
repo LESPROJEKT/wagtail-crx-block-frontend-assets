@@ -28,6 +28,10 @@ jobs:
             toxenv: py311-wagtail63-crx5
           - python-version: "3.11"
             toxenv: py311-wagtail63-crx5-float
+          - python-version: "3.12"
+            toxenv: py312-wagtail70-crx6
+          - python-version: "3.12"
+            toxenv: py312-wagtail70-crx6-float
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

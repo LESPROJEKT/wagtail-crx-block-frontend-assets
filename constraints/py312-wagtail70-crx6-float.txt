@@ -1,0 +1,2 @@
+wagtail==7.*
+coderedcms>=6,<7
