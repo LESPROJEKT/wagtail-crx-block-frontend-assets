@@ -1,2 +1,2 @@
-coderedcms>=2.1,<6
-wagtail>=4.2,<7
+coderedcms>=2.1,<7
+wagtail>=4.2,<8

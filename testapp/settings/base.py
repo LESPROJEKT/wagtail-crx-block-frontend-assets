@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from importlib.util import find_spec
 
 from django.utils.translation import gettext_lazy as _
 
@@ -48,7 +49,6 @@ INSTALLED_APPS = [
     "wagtail.search",
     "wagtail",
     "wagtail.contrib.settings",
-    "wagtail.contrib.modeladmin",
     "wagtail.contrib.table_block",
     "wagtail.admin",
     # Django
@@ -60,6 +60,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
 ]
+
+# Wagtail 6 removed modeladmin; keep it only when the contrib app exists.
+if find_spec("wagtail.contrib.modeladmin"):
+    settings_index = INSTALLED_APPS.index("wagtail.contrib.settings")
+    INSTALLED_APPS.insert(settings_index + 1, "wagtail.contrib.modeladmin")
 
 MIDDLEWARE = [
     # Save pages to cache. Must be FIRST.

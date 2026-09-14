@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wagtail_crx_block_frontend_assets"
-version = "1.1.0"
+version = "1.2.0"
 authors = [
   { name="Daniel Kunický", email="danecek37@gmail.com" },
 ]
@@ -13,12 +13,16 @@ readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 dependencies = [
-  "coderedcms>=2.1,<6",
-  "wagtail>=4.2,<7"
+  "coderedcms>=2.1,<7",
+  "wagtail>=4.2,<8"
 ]
 
 [project.optional-dependencies]
